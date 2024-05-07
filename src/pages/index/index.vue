@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const title = ref('Hello')
-title.value = '测试测试'
+  const title = ref('')
+  title.value = '张三'
+
 </script>
 
 <style>

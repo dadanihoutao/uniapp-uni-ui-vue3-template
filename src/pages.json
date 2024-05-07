@@ -1,19 +1,34 @@
 {
-	// 在pages.json里的globalStyle同级下添加
-	// "easycom": {
-	// 	"autoscan": true, // 是否开启自动扫描
-	// 	 "custom": {
-	// 			"van-(.*)": "/wxcomponents/vant/dist/$1/index"
-	// 	 }
-	// },
 	"pages": [
 		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
+      "name": "index",
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "name": "about",
+      "path": "pages/about/about",
+      "style": {
+        "navigationBarTitleText": "个人"
+      }
+    }
 	],
+	"subPackages": [
+    {
+      "root": "pages/test",
+      "pages": [
+        {
+          "name": "test",
+          "path": "test",
+          "style": {
+            "navigationBarTitleText": "测试"
+          }
+        }
+      ]
+    }
+  ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -26,5 +41,21 @@
 			"van-button": "/wxcomponents/vant/dist/button/index",
 			"van-card": "/wxcomponents/vant/dist/card/index"
 		}
-	}
+	},
+	"tabBar": {
+    "color": "#1AA86C",
+    "selectedColor": "#1AA86C",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "个人"
+      }
+    ]
+  }
 }
