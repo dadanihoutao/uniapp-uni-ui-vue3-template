@@ -1,5 +1,12 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	// 在pages.json里的globalStyle同级下添加
+	// "easycom": {
+	// 	"autoscan": true, // 是否开启自动扫描
+	// 	 "custom": {
+	// 			"van-(.*)": "/wxcomponents/vant/dist/$1/index"
+	// 	 }
+	// },
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -11,6 +18,13 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+			"van-row": "/wxcomponents/vant/dist/row/index",
+			"van-col": "/wxcomponents/vant/dist/col/index",
+			"van-icon": "/wxcomponents/vant/dist/icon/index",
+			"van-button": "/wxcomponents/vant/dist/button/index",
+			"van-card": "/wxcomponents/vant/dist/card/index"
+		}
 	}
 }
