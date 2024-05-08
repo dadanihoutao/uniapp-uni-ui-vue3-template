@@ -11,5 +11,5 @@ onHide(() => {
 });
 </script>
 <style>
-@import "./wxcomponents/vant/dist/common/index.wxss";
+/* @import "./wxcomponents/vant/dist/common/index.wxss"; */
 </style>

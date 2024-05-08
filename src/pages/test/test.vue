@@ -16,7 +16,7 @@ const goback = () => {
 <template>
   <view class="content">
     <view class="text-area">
-      <van-button type="primary" @click="goback()">返回</van-button>
+      <button type="primary" @click="goback()">返回</button>
       <text>测试页面</text>
     </view>
   </view>
