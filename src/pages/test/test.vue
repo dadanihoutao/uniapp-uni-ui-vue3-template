@@ -1,16 +1,14 @@
 <script setup lang="ts">
-const title = ref('Hello')
-title.value = '测试测试'
+  const title = ref("Hello");
+  title.value = "测试测试";
 
-onLoad(() => {
-  console.log('页面加载完成')
-})
+  onLoad(() => {
+    console.log("页面加载完成");
+  });
 
-const goback = () => {
-  uni.navigateBack()
-}
-
-
+  const goback = () => {
+    uni.navigateBack();
+  };
 </script>
 
 <template>
@@ -22,5 +20,4 @@ const goback = () => {
   </view>
 </template>
 
-<style>
-</style>
+<style></style>

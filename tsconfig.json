@@ -1,6 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
+    "noImplicitAny": false,
     "isolatedModules": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -9,7 +10,16 @@
       "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
     },
     "lib": ["esnext", "dom", "ES6"],
-    "types": ["@dcloudio/types", "miniprogram-api-typings"]
+    "types": [
+      "@dcloudio/types", // uni-app API 类型
+      "miniprogram-api-typings", // 原生微信小程序类型
+      "@uni-helper/uni-app-types", // uni-app 组件类型
+      "@uni-helper/uni-ui-types" // uni-ui 组件类型  // [!code ++]
+    ]
+  },
+  // vue 编译器类型，校验标签类型
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
