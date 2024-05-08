@@ -1,5 +1,17 @@
+<script setup lang="ts">
+  const title = ref('')
+  title.value = '张三'
+
+  console.log(import.meta.env)
+
+</script>
+
 <template>
   <view class="content">
+    <button size="default" type="default" 
+    style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19" 
+    hover-class="is-hover">按钮</button>
+
     <!-- <image class="logo" src="/static/logo.png" /> -->
     <view class="text-area">
       <!-- <text class="title">{{ title }}</text> -->
@@ -16,12 +28,6 @@
     </view>
   </view>
 </template>
-
-<script setup lang="ts">
-  const title = ref('')
-  title.value = '张三'
-
-</script>
 
 <style>
 </style>
