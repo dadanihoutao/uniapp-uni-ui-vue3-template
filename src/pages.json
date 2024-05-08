@@ -1,4 +1,10 @@
 {
+  "easycom": {
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
 	"pages": [
 		{
       "name": "index",
@@ -33,14 +39,7 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"usingComponents": {
-			"van-row": "/wxcomponents/vant/dist/row/index",
-			"van-col": "/wxcomponents/vant/dist/col/index",
-			"van-icon": "/wxcomponents/vant/dist/icon/index",
-			"van-button": "/wxcomponents/vant/dist/button/index",
-			"van-card": "/wxcomponents/vant/dist/card/index"
-		}
+		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
     "color": "#1AA86C",
