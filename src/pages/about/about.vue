@@ -1,71 +1,71 @@
 <script setup lang="ts">
-  const title = ref("Hello");
-  title.value = "测试测试";
+  const title = ref('Hello')
+  title.value = '测试测试'
 
   onReady(() => {
-    console.log("on ready");
-  });
+    console.log('on ready')
+  })
 
-  const type = ref("center");
-  const msgType = ref("success");
-  const messageText = ref("这是一条成功提示");
-  const value = ref("");
+  const type = ref('center')
+  const msgType = ref<any>('success')
+  const messageText = ref('这是一条成功提示')
+  const value = ref('')
 
   const change = (e) => {
-    console.log("当前模式：" + e.type + ",状态：" + e.show);
-  };
-  const popup = ref();
+    console.log('当前模式：' + e.type + ',状态：' + e.show)
+  }
+  const popup = ref()
   const toggle = (t: string) => {
-    console.log(t);
-    type.value = t;
+    console.log(t)
+    type.value = t
     // open 方法传入参数 等同在 uni-popup 组件上绑定 type属性
-    popup.value.open(t);
-  };
+    popup.value.open(t)
+  }
 
-  const message = ref();
+  const message = ref()
   const messageToggle = (type: string) => {
-    msgType.value = type;
-    messageText.value = `这是一条${type}消息提示`;
-    message.value.open();
-  };
+    msgType.value = type
+    messageText.value = `这是一条${type}消息提示`
+    message.value.open()
+  }
 
-  const alertDialog = ref();
+  const alertDialog = ref()
   const dialogToggle = (type: string) => {
-    msgType.value = type;
-    alertDialog.value.open();
-  };
+    msgType.value = type
+    alertDialog.value.open()
+  }
 
   const dialogConfirm = () => {
-    console.log("点击确认");
-    messageText.value = `点击确认了 ${msgType.value} 窗口`;
-    message.value.open();
-  };
+    console.log('点击确认')
+    messageText.value = `点击确认了 ${msgType.value} 窗口`
+    message.value.open()
+  }
 
-  const inputDialog = ref();
+  const inputDialog = ref()
   const inputDialogToggle = () => {
-    inputDialog.value.open();
-  };
+    inputDialog.value.open()
+  }
   const dialogClose = () => {
-    console.log("点击关闭");
-  };
+    console.log('点击关闭')
+  }
   const dialogInputConfirm = (val) => {
     uni.showLoading({
-      title: "3秒后会关闭"
-    });
+      title: '3秒后会关闭'
+    })
 
     setTimeout(() => {
-      uni.hideLoading();
-      console.log(val);
-      value.value = val;
+      uni.hideLoading()
+      console.log(val)
+      value.value = val
       // 关闭窗口后，恢复默认内容
-      inputDialog.value.close();
-    }, 3000);
-  };
+      inputDialog.value.close()
+    }, 3000)
+  }
 
-  const share = ref();
+  const share = ref()
   const shareToggle = () => {
-    share.value.open();
-  };
+    share.value.open()
+  }
 </script>
 
 <template>

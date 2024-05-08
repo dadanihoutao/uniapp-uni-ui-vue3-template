@@ -3,6 +3,7 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "isolatedModules": true,
+    "ignoreDeprecations": "5.0",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {

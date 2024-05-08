@@ -1,39 +1,39 @@
 <script setup lang="ts">
-  const title = ref("");
-  title.value = "张三";
+  const title = ref('')
+  title.value = '张三'
 
-  console.log(import.meta.env);
+  console.log(import.meta.env)
 
-  const showRight = ref();
-  const showLeft = ref();
+  const showRight = ref()
+  const showLeft = ref()
 
   // 打开窗口
   const showDrawer = (e: string) => {
-    if (e === "showLeft") {
-      showLeft.value.open();
+    if (e === 'showLeft') {
+      showLeft.value.open()
     } else {
-      showRight.value.open();
+      showRight.value.open()
     }
-  };
+  }
   // 关闭窗口
   const closeDrawer = (e: string) => {
-    if (e === "showLeft") {
-      showLeft.value.close();
+    if (e === 'showLeft') {
+      showLeft.value.close()
     } else {
-      showRight.value.close();
+      showRight.value.close()
     }
-  };
+  }
   // 抽屉状态发生变化触发
   const change = (e: any, type: any) => {
-    console.log(e, type);
+    console.log(e, type)
     // console.log((type === 'showLeft' ? '左窗口' : '右窗口') + (e ? '打开' : '关闭'));
-  };
+  }
 
   const toPage = () => {
     uni.navigateTo({
-      url: "/pages/test/test"
-    });
-  };
+      url: '/pages/test/test'
+    })
+  }
 </script>
 
 <template>

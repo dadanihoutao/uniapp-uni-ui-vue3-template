@@ -1,14 +1,14 @@
 <script setup lang="ts">
-  const title = ref("Hello");
-  title.value = "测试测试";
+  const title = ref('Hello')
+  title.value = '123'
 
   onLoad(() => {
-    console.log("页面加载完成");
-  });
+    console.log('页面加载完成')
+  })
 
   const goback = () => {
-    uni.navigateBack();
-  };
+    uni.navigateBack()
+  }
 </script>
 
 <template>
