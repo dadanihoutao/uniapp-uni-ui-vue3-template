@@ -1,6 +1,6 @@
 <script setup lang="ts">
   const title = ref('')
-  title.value = '张三'
+  title.value = "张三";
 
   console.log(import.meta.env)
 
@@ -11,7 +11,7 @@
   const confirm = () => {}
   // 打开窗口
   const showDrawer = (e: any) => {
-    if (e === 'showLeft') {
+    if (e === "showLeft") {
       showLeft.value.open()
     } else {
       showRight.value.open()
