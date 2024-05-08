@@ -41,7 +41,7 @@
     <button
       size="default"
       type="default"
-      style="color: #ffffff; background-color: #1aad19; border-color: #1aad19"
+      style="border-color: #1aad19; background-color: #1aad19; color: #fff"
       hover-class="is-hover"
     >
       按钮
@@ -131,26 +131,22 @@
     padding: 10px;
   }
   .scroll-view {
+    /* #endif */
+    flex: 1;
     /* #ifndef APP-NVUE */
     width: 100%;
     height: 100%;
-    /* #endif */
-    flex: 1;
   }
   // 处理抽屉内容滚动
   .scroll-view-box {
-    flex: 1;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
+    flex: 1;
   }
   .info {
     padding: 15px;
     color: #666;
   }
-
   .info-text {
     font-size: 14px;
     color: #666;

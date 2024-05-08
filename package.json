@@ -39,7 +39,10 @@
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint  './src/**/*.{js,jsx,vue,ts,tsx}' --fix"
+    "lint": "npm run tsc && npm run eslint && npm run stylelint",
+    "tsc": "vue-tsc --noEmit --skipLibCheck",
+    "eslint": "eslint --ext .vue,.ts src/ --fix",
+    "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4010420240430001",
@@ -56,7 +59,6 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4010420240430001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4010420240430001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4010420240430001",
-    "@vant/weapp": "^1.11.5",
     "vue": "3.4.21",
     "vue-i18n": "9.13.1"
   },
@@ -87,9 +89,15 @@
     "jest-environment-node": "27.5.1",
     "miniprogram-api-typings": "^3.12.2",
     "postcss": "^8.1.0",
+    "postcss-html": "^1.6.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
     "sass": "^1.77.0",
     "sass-loader": "8.0.2",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.3.0",
     "typescript": "*",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.27.0",

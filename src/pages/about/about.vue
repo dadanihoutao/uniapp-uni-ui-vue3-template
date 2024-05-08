@@ -210,95 +210,78 @@
     /* #endif */
     flex-direction: row;
   }
-
   @mixin height {
-    /* #ifndef APP-NVUE */
-    height: 100%;
     /* #endif */
     /* #ifdef APP-NVUE */
     flex: 1;
+    /* #ifndef APP-NVUE */
+    height: 100%;
     /* #endif */
   }
-
   .box {
     @include flex;
   }
-
   .button {
     @include flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex: 1;
-    height: 35px;
     margin: 0 5px;
     border-radius: 5px;
+    height: 35px;
   }
-
   .example-body {
-    background-color: #fff;
     padding: 10px 0;
+    background-color: #fff;
   }
-
   .button-text {
-    color: #fff;
     font-size: 12px;
+    color: #fff;
   }
-
   .popup-content {
     @include flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 15px;
     height: 50px;
     background-color: #fff;
   }
-
   .popup-height {
     @include height;
     width: 200px;
   }
-
   .text {
     font-size: 12px;
     color: #333;
   }
-
   .popup-success {
-    color: #fff;
     background-color: #e1f3d8;
+    color: #fff;
   }
-
   .popup-warn {
-    color: #fff;
     background-color: #faecd8;
+    color: #fff;
   }
-
   .popup-error {
-    color: #fff;
     background-color: #fde2e2;
-  }
-
-  .popup-info {
     color: #fff;
-    background-color: #f2f6fc;
   }
-
+  .popup-info {
+    background-color: #f2f6fc;
+    color: #fff;
+  }
   .success-text {
     color: #09bb07;
   }
-
   .warn-text {
     color: #e6a23c;
   }
-
   .error-text {
     color: #f56c6c;
   }
-
   .info-text {
     color: #909399;
   }
-
   .dialog,
   .share {
     /* #ifndef APP-NVUE */
@@ -306,22 +289,19 @@
     /* #endif */
     flex-direction: column;
   }
-
   .dialog-box {
     padding: 10px;
   }
-
   .dialog .button,
   .share .button {
-    /* #ifndef APP-NVUE */
-    width: 100%;
+    flex: 1;
     /* #endif */
     margin: 0;
     margin-top: 10px;
     padding: 3px 0;
-    flex: 1;
+    /* #ifndef APP-NVUE */
+    width: 100%;
   }
-
   .dialog-text {
     font-size: 14px;
     color: #333;

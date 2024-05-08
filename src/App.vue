@@ -10,6 +10,4 @@
     console.log('App Hide')
   })
 </script>
-<style>
-  /* @import "./wxcomponents/vant/dist/common/index.wxss"; */
-</style>
+<style></style>
