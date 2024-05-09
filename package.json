@@ -42,7 +42,8 @@
     "lint": "npm run tsc && npm run eslint && npm run stylelint",
     "tsc": "vue-tsc --noEmit --skipLibCheck",
     "eslint": "eslint --ext .vue,.ts src/ --fix",
-    "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix"
+    "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4010420240430001",
@@ -85,8 +86,10 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.25.0",
     "globals": "^15.1.0",
+    "husky": "^9.0.11",
     "jest": "27.0.4",
     "jest-environment-node": "27.5.1",
+    "lint-staged": "^15.2.2",
     "miniprogram-api-typings": "^3.12.2",
     "postcss": "^8.1.0",
     "postcss-html": "^1.6.0",
@@ -104,5 +107,26 @@
     "vite": "5.2.8",
     "vue-tsc": "^1.0.24",
     "webpack": "4.36.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,json}": [
+      "prettier --write"
+    ],
+    "*.{vue,html}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
