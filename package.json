@@ -44,7 +44,8 @@
     "eslint": "eslint --ext .vue,.ts src/ --fix",
     "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix",
     "prepare": "husky",
-    "commit": "git add . && cz"
+    "commit": "git add . && cz",
+    "add": "node ./auto/addPage.ts"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4010420240430001",
