@@ -1,8 +1,11 @@
 <script setup lang="ts">
+  import { isMp, platform } from '@/utils/platform'
+
   const title = ref('')
   title.value = '张三'
 
   console.log(import.meta.env)
+  console.log('平台：', isMp, platform)
 
   const showRight = ref()
   const showLeft = ref()
