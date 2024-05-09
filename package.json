@@ -64,12 +64,15 @@
     "vue-i18n": "9.13.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@dcloudio/types": "^3.4.8",
     "@dcloudio/uni-automator": "3.0.0-4010420240430001",
     "@dcloudio/uni-cli-shared": "3.0.0-4010420240430001",
     "@dcloudio/uni-stacktracey": "3.0.0-4010420240430001",
     "@dcloudio/uni-ui": "^1.5.5",
     "@dcloudio/vite-plugin-uni": "3.0.0-4010420240430001",
+    "@types/node": "18.0.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "7.8.0",
     "@uni-helper/uni-app-types": "^0.5.13",
