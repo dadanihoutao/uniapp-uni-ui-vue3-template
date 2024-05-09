@@ -131,7 +131,7 @@
     padding: 10px;
   }
   .scroll-view {
-    /* #endif */
+    /* #ifndif */
     flex: 1;
     /* #ifndef APP-NVUE */
     width: 100%;

@@ -31,13 +31,6 @@
           "style": {
             "navigationBarTitleText": "测试"
           }
-        },
-        {
-          "name": "news",
-          "path": "news",
-          "style": {
-            "navigationBarTitleText": "新闻页面"
-          }
         }
       ]
     }

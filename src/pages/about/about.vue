@@ -79,10 +79,10 @@
     <uni-section title="基本示例" type="line">
       <view class="example-body box">
         <button class="button" type="primary" @click="toggle('top')">
-          <text class="button-text">顶部</text>
+          <text class="button-text">顶部1</text>
         </button>
         <button class="button" type="primary" @click="toggle('bottom')">
-          <text class="button-text">底部</text>
+          <text class="button-text">底部2</text>
         </button>
         <button class="button" type="primary" @click="toggle('center')">
           <text class="button-text">居中</text>
@@ -188,7 +188,7 @@
           mode="input"
           title="输入内容"
           value="对话框预置提示内容!"
-          placeholder="请输入内容"
+          placeholder="请输入内容1"
           @confirm="dialogInputConfirm"
         ></uni-popup-dialog>
       </uni-popup>
@@ -211,8 +211,6 @@
     flex-direction: row;
   }
   @mixin height {
-    /* #endif */
-    /* #ifdef APP-NVUE */
     flex: 1;
     /* #ifndef APP-NVUE */
     height: 100%;
@@ -295,12 +293,12 @@
   .dialog .button,
   .share .button {
     flex: 1;
-    /* #endif */
     margin: 0;
     margin-top: 10px;
     padding: 3px 0;
     /* #ifndef APP-NVUE */
     width: 100%;
+    /* #endif */
   }
   .dialog-text {
     font-size: 14px;

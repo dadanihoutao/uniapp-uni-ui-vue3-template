@@ -43,7 +43,7 @@ function addPages(pages) {
 
 <script setup lang="ts" name="${name}"></script>
 
-<style scoped lang="scss"></style>
+<style scoped></style>
 `
     createStream.write(template)
     createStream.end()
