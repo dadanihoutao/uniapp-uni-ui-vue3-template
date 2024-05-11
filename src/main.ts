@@ -6,5 +6,3 @@ export function createApp() {
     app
   }
 }
-
-// 阿道夫
