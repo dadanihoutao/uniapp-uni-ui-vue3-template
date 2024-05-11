@@ -44,7 +44,7 @@
     "eslint": "eslint --ext .vue,.ts src/ --fix",
     "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix",
     "prepare": "husky",
-    "commit": "git add . && cz",
+    "commit": "git pull && git add . && git-cz && git push",
     "add": "node ./auto/addPage.ts"
   },
   "dependencies": {
@@ -84,6 +84,7 @@
     "auto-import-types": "^0.0.4",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.9.1",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
@@ -138,7 +139,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-git"
     }
   }
 }
