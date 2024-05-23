@@ -5,9 +5,9 @@
     // 以正则方式自定义组件匹配规则
     "custom": {
       // uni-ui 规则如下配置
-      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
       // 以 Xtx 开头的组件，在 components 文件夹中查找引入（需要重启服务器）
-      "^Xtx(.*)": "@/components/Xtx$1.vue"
+      // "^Xtx(.*)": "@/components/Xtx$1.vue"
     }
   },
   "pages": [
@@ -48,14 +48,36 @@
       }
     }
   ],
+  // 分包加载规则
   "subPackages": [
     {
-      "root": "pages/test",
+      // 子包的根目录
+      "root": "pages-member",
+      // 页面路径和窗口表现
       "pages": [
         {
-          "path": "test",
+          "path": "settings/settings",
           "style": {
-            "navigationBarTitleText": "测试"
+            "navigationBarTitleText": "个人设置"
+          }
+        },
+        {
+          "path": "address/address",
+          "style": {
+            "navigationBarTitleText": "地址管理"
+          }
+        }
+      ]
+    },
+    {
+      // 子包的根目录
+      "root": "pages-order",
+      // 页面路径和窗口表现
+      "pages": [
+        {
+          "path": "list/list",
+          "style": {
+            "navigationBarTitleText": "订单列表"
           }
         }
       ]
@@ -98,5 +120,12 @@
         "selectedIconPath": "static/tabs/user_selected.png"
       }
     ]
+  },
+  // 分包预下载规则
+  "preloadRule": {
+    "pages/my/my": {
+      "network": "all",
+      "packages": ["pages-member"]
+    }
   }
 }

@@ -27,29 +27,38 @@
       dataList.value = res.result
     }
   }
+  const saveMember = () => {
+    memberStore.setProfile({
+      nickname: '黑马先锋',
+      token: '123123132'
+    })
+  }
+
+  const toSetting = () => {
+    uni.navigateTo({
+      url: '/pages-member/settings/settings'
+    })
+  }
 </script>
 
 <template>
   <view class="my">
     <view>会员信息：{{ memberStore.profile }}</view>
-    <button
-      @click="
-        memberStore.setProfile({
-          nickname: '黑马先锋',
-          token: '123123132'
-        })
-      "
-      size="mini"
-      plain
-      type="primary"
-    >
+    <button @click="saveMember" size="mini" plain type="primary">
       保存用户信息
     </button>
     <button @click="memberStore.clearProfile()" size="mini" plain type="warn">
       清理用户信息
     </button>
     <button @click="getData()" size="mini" plain type="warn">接口请求</button>
-
+    <button @click="toSetting()" size="mini" plain type="warn">跳转设置</button>
+    <navigator
+      class="settings"
+      url="/pages-member/settings/settings"
+      hover-class="none"
+    >
+      设置
+    </navigator>
     <view>
       <view v-for="item in dataList" :key="item.id">
         <image :src="item.picture" mode="scaleToFill" />
