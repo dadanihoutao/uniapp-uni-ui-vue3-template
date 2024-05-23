@@ -25,7 +25,7 @@
     position: relative;
     flex-direction: column;
     padding-top: 20px;
-    background-image: url("@/static/images/navigator_bg.png");
+    background-image: url('@/static/images/navigator_bg.png');
     background-size: cover;
     .logo {
       display: flex;
