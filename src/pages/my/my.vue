@@ -6,13 +6,26 @@
 
   console.log(memberStore)
 
+  type ResDataType = {
+    desc: string
+    id: string
+    name: string
+    orderNum: number
+    picture: string
+    price: string
+  }
+
+  const dataList = ref<ResDataType[]>([])
   const getData = async () => {
-    const res = await http<string[]>({
+    const res = await http<ResDataType[]>({
       url: '/home/new',
       method: 'GET',
       data: {}
     })
     console.log(res)
+    if (res.code === '1') {
+      dataList.value = res.result
+    }
   }
 </script>
 
@@ -36,6 +49,12 @@
       清理用户信息
     </button>
     <button @click="getData()" size="mini" plain type="warn">接口请求</button>
+
+    <view>
+      <view v-for="item in dataList" :key="item.id">
+        <image :src="item.picture" mode="scaleToFill" />
+      </view>
+    </view>
   </view>
 </template>
 

@@ -1,21 +1,14 @@
-const apiEnv: ApiEnv = 'dev'
+// const apiEnv: ApiEnv = 'dev'
+const apiEnv: ApiEnv = import.meta.env.MODE as ApiEnv
 
 const envMap = {
-  dev: {
+  development: {
     baseUrl: 'http://m.dev.xxx.com',
-    apiBaseUrl: 'https://m.devapi.xxx.com'
+    apiBaseUrl: 'https://pcapi-xiaotuxian-front-devtest.itheima.net'
   },
-  beta: {
+  production: {
     baseUrl: 'http://m.beta.xxx.com',
-    apiBaseUrl: 'https://m.betaapi.xxx.com'
-  },
-  prod: {
-    baseUrl: 'https://m.xxx.com',
-    apiBaseUrl: 'https://m.api.xxx.com'
-  },
-  local: {
-    baseUrl: 'http://m.dev.xxx.com',
-    apiBaseUrl: 'https://m.devapi.xxx.com'
+    apiBaseUrl: 'https://pcapi-xiaotuxian-front-devtest.itheima.net'
   }
 }
 

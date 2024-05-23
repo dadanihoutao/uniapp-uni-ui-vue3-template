@@ -71,7 +71,7 @@
     "color": "#333333",
     "selectedColor": "#1AA86C",
     "backgroundColor": "#ffffff",
-    "borderStyle": "white",
+    "borderStyle": "black",
     "list": [
       {
         "text": "首页",

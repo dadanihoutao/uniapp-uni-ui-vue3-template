@@ -15,7 +15,7 @@ export default defineConfig({
   plugins: [
     AutoImportTypes(),
     AutoImport({
-      dts: 'src/@types/auto-imports.d.ts',
+      dts: 'src/auto-imports.d.ts',
       imports: ['vue', 'uni-app', 'pinia'],
       exclude: ['createApp'],
       eslintrc: {
@@ -24,7 +24,7 @@ export default defineConfig({
     }),
     Components({
       extensions: ['vue'],
-      dts: 'src/@types/components.d.ts'
+      dts: 'src/components.d.ts'
     }),
     uni()
   ],

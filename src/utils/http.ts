@@ -9,10 +9,10 @@
  *   3. 添加小程序端请求头标识
  *   4. 添加 token 请求头标识
  */
-
+import env from '@/config/env'
 import { useMemberStore } from '@/stores'
 
-const baseURL = 'https://pcapi-xiaotuxian-front-devtest.itheima.net'
+const baseURL = env.apiBaseUrl
 
 const httpInterceptor = {
   invoke(options: UniApp.RequestOptions) {
