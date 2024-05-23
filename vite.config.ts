@@ -16,14 +16,7 @@ export default defineConfig({
     AutoImportTypes(),
     AutoImport({
       dts: 'src/auto-imports.d.ts',
-      imports: [
-        'vue',
-        'uni-app'
-        // 'pinia',
-        // {
-        //   '@/helper/pinia-auto-refs': ['useStore']
-        // }
-      ],
+      imports: ['vue', 'uni-app', 'pinia'],
       exclude: ['createApp'],
       eslintrc: {
         enabled: true

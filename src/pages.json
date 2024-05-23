@@ -19,6 +19,20 @@
       "style": {
         "navigationBarTitleText": "个人"
       }
+    },
+    {
+      "name": "my",
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "name": "login",
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
     }
   ],
   "subPackages": [
