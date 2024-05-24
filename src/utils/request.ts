@@ -53,8 +53,10 @@ function baseRequest(
       },
       data,
       success: (res: any) => {
+        console.log(res)
         if (res.statusCode >= 200 && res.statusCode < 400) {
-          if (res.data.errno === 0) {
+          // 请求成功
+          if (res.data.code === '1') {
             responseData = res.data
           } else {
             reject(res.data)
@@ -82,12 +84,12 @@ function baseRequest(
 }
 
 const http = {
-  get: <T>(api: string, params: any) =>
+  get: <T>(api: string, params?: any) =>
     baseRequest('GET', api, {
       ...getCommonParams(),
       ...params
     }) as Http.Response<T>,
-  post: <T>(api: string, params: any) =>
+  post: <T>(api: string, params?: any) =>
     baseRequest('POST', api, {
       ...getCommonParams(),
       ...params

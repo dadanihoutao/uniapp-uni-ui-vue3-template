@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { useMemberStore } from '@/stores'
   import { http } from '@/utils/http'
+  import baseHttp from '@/utils/request'
 
   const memberStore = useMemberStore()
 
@@ -39,6 +40,12 @@
       url: '/pages-member/settings/settings'
     })
   }
+
+  // 测试另外一个请求
+  const toRequest = async () => {
+    const res = await baseHttp.get('/home/new')
+    console.log(res)
+  }
 </script>
 
 <template>
@@ -52,6 +59,9 @@
     </button>
     <button @click="getData()" size="mini" plain type="warn">接口请求</button>
     <button @click="toSetting()" size="mini" plain type="warn">跳转设置</button>
+    <button @click="toRequest()" size="mini" plain type="warn">
+      测试request函数
+    </button>
     <navigator
       class="settings"
       url="/pages-member/settings/settings"

@@ -1,4 +1,4 @@
-import { useStore } from '@/helper/pinia-auto-refs'
+import { useMemberStore } from '@/stores'
 import { APP_ID, APP_VERSION } from './app'
 
 const commonParams = {
@@ -8,10 +8,14 @@ const commonParams = {
 }
 
 export function getCommonParams() {
-  const { token, userId } = useStore('user')
+  const memberStore = useMemberStore()
 
   return Object.assign(
-    { token: token.value, uuid: userId.value, timestamp: Date.now() },
+    {
+      token: memberStore.profile?.token,
+      uuid: memberStore.profile?.uuid,
+      timestamp: Date.now()
+    },
     commonParams
   )
 }
