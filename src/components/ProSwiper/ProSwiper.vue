@@ -9,10 +9,20 @@
     activeIndex.value = event.detail.current
   }
 
+  // 重置索引
+  const resetData = () => {
+    activeIndex.value = 0
+  }
+
   // 定义 props
   defineProps<{
     list: BannerItem[]
   }>()
+
+  // 暴露
+  defineExpose({
+    resetData
+  })
 </script>
 
 <template>

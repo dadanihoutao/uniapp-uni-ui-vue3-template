@@ -1,15 +1,43 @@
 <script setup lang="ts">
   import type { GuessItem } from '@/typings/home'
   import { getGoodsGuessLike } from './api'
+  import type { PageParams } from '@/typings/global'
 
+  // Required 必传的意思
+  const pageParams: Required<PageParams> = {
+    page: 1,
+    pageSize: 10
+  }
   const guessList = ref<GuessItem[]>([])
+  const finish = ref<boolean>(false)
   const fetchGuessList = async () => {
-    const res = await getGoodsGuessLike()
-    guessList.value = res.result.items
+    // 加载完所有数据后 直接 return
+    if (finish.value) return
+    const res = await getGoodsGuessLike(pageParams)
+    guessList.value = guessList.value.concat(res.result.items)
+    if (pageParams.page < res.result.pages) {
+      pageParams.page++
+    } else {
+      finish.value = true
+    }
+  }
+
+  // 从新加载数据
+  const reloadData = () => {
+    pageParams.page = 1
+    guessList.value = []
+    finish.value = false
+    fetchGuessList()
   }
 
   onMounted(() => {
     fetchGuessList()
+  })
+
+  // 暴露
+  defineExpose({
+    fetchGuessList,
+    reloadData
   })
 </script>
 
@@ -27,15 +55,17 @@
     >
       <image class="image" mode="aspectFill" :src="item.picture"></image>
       <view class="name">
-        德国THORE男表 超薄手表男士休闲简约夜光石英防水直径40毫米
+        {{ item.name }}
       </view>
       <view class="price">
         <text class="small">¥</text>
-        <text>899.00</text>
+        <text>{{ item.price }}</text>
       </view>
     </navigator>
   </view>
-  <view class="loading-text"> 正在加载... </view>
+  <view class="loading-text">
+    {{ finish ? '没有更多数据了~' : '正在加载...' }}
+  </view>
 </template>
 
 <style lang="scss">

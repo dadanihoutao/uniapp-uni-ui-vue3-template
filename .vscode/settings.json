@@ -9,6 +9,8 @@
     "miniprogram",
     "mutli",
     "pinia",
+    "Refresherrefresh",
+    "scrolltolower",
     "unplugin"
   ]
 }
