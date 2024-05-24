@@ -1,5 +1,5 @@
-<script setup lang="ts" name="CustomNavbar">
-  // 获取安全区域数据
+<script setup lang="ts">
+  // 获取屏幕边界到安全区域距离
   const { safeAreaInsets } = uni.getSystemInfoSync()
 </script>
 
@@ -31,8 +31,7 @@
       display: flex;
       align-items: center;
       padding-left: 30rpx;
-      padding-top: 20rpx;
-      height: 64rpx;
+      height: 72rpx;
       .logo-image {
         width: 166rpx;
         height: 39rpx;

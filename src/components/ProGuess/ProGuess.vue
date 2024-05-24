@@ -5,7 +5,6 @@
   const guessList = ref<GuessItem[]>([])
   const fetchGuessList = async () => {
     const res = await getGoodsGuessLike()
-    console.log(res)
     guessList.value = res.result.items
   }
 
@@ -61,7 +60,7 @@
         margin: 0 10rpx;
         width: 20rpx;
         height: 20rpx;
-        background-image: url("@/static/images/bubble.png");
+        background-image: url('@/static/images/bubble.png');
         background-size: contain;
         content: '';
       }

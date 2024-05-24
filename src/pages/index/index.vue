@@ -35,12 +35,14 @@
 </script>
 <template>
   <CustomNavbar />
-  <scroll-view class="scroll-view" scroll-y>
-    <ProSwiper :list="bannerList" />
-    <CategoryPanel :list="categoryList" />
-    <HotPanels :list="hotList" />
-    <ProGuess />
-  </scroll-view>
+  <view class="scroll-view-wrap">
+    <scroll-view class="scroll-view" scroll-y>
+      <ProSwiper :list="bannerList" />
+      <CategoryPanel :list="categoryList" />
+      <HotPanels :list="hotList" />
+      <ProGuess />
+    </scroll-view>
+  </view>
 </template>
 
 <style lang="scss">
@@ -50,8 +52,11 @@
     height: 100%;
     background-color: #f7f7f7;
   }
-  // 这里布局有问题
-  .scroll-view {
+  .scroll-view-wrap {
+    overflow: hidden;
     flex: 1;
+    .scroll-view {
+      height: 100%;
+    }
   }
 </style>
