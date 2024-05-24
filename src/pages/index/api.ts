@@ -1,4 +1,4 @@
-import type { BannerItem, CategoryItem } from '@/types/home'
+import type { BannerItem, CategoryItem } from '@/typings/home'
 import { http } from '@/utils/http'
 
 /**

@@ -3,7 +3,7 @@
   import CategoryPanel from './componets/CategoryPanel.vue'
 
   import { getHomeBannerList, getCategoryList } from './api'
-  import type { BannerItem, CategoryItem } from '@/types/home'
+  import type { BannerItem, CategoryItem } from '@/typings/home'
   // 获取轮播图数据
   const bannerList = ref<BannerItem[]>([])
   const fetchBannerList = async () => {

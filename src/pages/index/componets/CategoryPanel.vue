@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { CategoryItem } from '@/types/home'
+  import type { CategoryItem } from '@/typings/home'
 
   defineProps<{
     list: CategoryItem[]
