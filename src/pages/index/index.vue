@@ -1,9 +1,10 @@
 <script setup lang="ts">
   import CustomNavbar from './componets/CustomNavbar.vue'
   import CategoryPanel from './componets/CategoryPanel.vue'
+  import HotPanels from './componets/HotPanels.vue'
 
-  import { getHomeBannerList, getCategoryList } from './api'
-  import type { BannerItem, CategoryItem } from '@/typings/home'
+  import { getHomeBannerList, getCategoryList, getHomeHot } from './api'
+  import type { BannerItem, CategoryItem, HotItem } from '@/typings/home'
   // 获取轮播图数据
   const bannerList = ref<BannerItem[]>([])
   const fetchBannerList = async () => {
@@ -18,19 +19,39 @@
     categoryList.value = res.result
   }
 
+  // 获取热门列表
+  const hotList = ref<HotItem[]>([])
+  const fetchHotList = async () => {
+    const res = await getHomeHot()
+    hotList.value = res.result
+  }
+
   // 初始化
   onLoad(() => {
     fetchBannerList()
     fetchCategoryList()
+    fetchHotList()
   })
 </script>
 <template>
-  <view>
-    <CustomNavbar />
+  <CustomNavbar />
+  <scroll-view class="scroll-view" scroll-y>
     <ProSwiper :list="bannerList" />
     <CategoryPanel :list="categoryList" />
-    <text>index</text>
-  </view>
+    <HotPanels :list="hotList" />
+    <ProGuess />
+  </scroll-view>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+  page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f7f7f7;
+  }
+  // 这里布局有问题
+  .scroll-view {
+    flex: 1;
+  }
+</style>

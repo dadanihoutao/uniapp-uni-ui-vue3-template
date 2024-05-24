@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ProGuess: typeof import('./components/ProGuess/ProGuess.vue')['default']
     ProSwiper: typeof import('./components/ProSwiper/ProSwiper.vue')['default']
   }
 }
