@@ -1,4 +1,4 @@
-import type { BannerItem } from '@/types/home'
+import type { BannerItem, CategoryItem } from '@/types/home'
 import { http } from '@/utils/http'
 
 /**
@@ -15,5 +15,15 @@ export const getHomeBannerList = () => {
     data: {
       distributionSite: 1
     }
+  })
+}
+
+/**
+ * 首页-前台分类-小程序
+ */
+export const getCategoryList = () => {
+  return http<CategoryItem[]>({
+    method: 'GET',
+    url: '/home/category/mutli'
   })
 }
