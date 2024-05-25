@@ -64,7 +64,7 @@
   .carousel {
     overflow: hidden;
     position: relative;
-    height: 100%;
+    // height: 100%;
     background-color: #efefef;
     transform: translateY(0);
     .indicator {

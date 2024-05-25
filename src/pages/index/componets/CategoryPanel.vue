@@ -41,6 +41,8 @@
         height: 100rpx;
       }
       .text {
+        display: flex;
+        justify-content: center;
         font-size: 26rpx;
         color: #666;
       }
