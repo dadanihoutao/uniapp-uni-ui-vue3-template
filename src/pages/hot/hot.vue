@@ -26,10 +26,13 @@
 
   // 获取数据
   const bannerPicture = ref<string>()
-  const subTypes = ref<SubTypeItem[]>([])
+  const subTypes = ref<(SubTypeItem & { finish?: boolean })[]>([])
   const activeIndex = ref(0)
   const fetchHotData = async () => {
-    const res = await getHotListAPI(currenMap!.url)
+    const res = await getHotListAPI(currenMap!.url, {
+      page: import.meta.env.DEV ? 31 : 1,
+      pageSize: 10
+    })
     bannerPicture.value = res.result.bannerPicture
     subTypes.value = res.result.subTypes
   }
@@ -43,6 +46,11 @@
   const handleScrollToLower = async () => {
     // 获取当前选项
     const currSubType = subTypes.value[activeIndex.value]
+    // 加限制条件
+    if (currSubType.goodsItems.page >= currSubType.goodsItems.pages) {
+      currSubType.finish = true
+      return
+    }
     // 当前页码累加
     currSubType.goodsItems.page++
     // 调用 api 获取数据
@@ -104,7 +112,9 @@
             </view>
           </navigator>
         </view>
-        <view class="loading-text">正在加载...</view>
+        <view class="loading-text">
+          {{ item.finish ? '没有更多了~' : '正在加载...' }}
+        </view>
       </scroll-view>
     </view>
   </view>
