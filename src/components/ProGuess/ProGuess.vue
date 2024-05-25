@@ -107,7 +107,7 @@
       margin-bottom: 20rpx;
       padding: 24rpx 20rpx 20rpx;
       border-radius: 10rpx;
-      width: 315rpx;
+      width: 305rpx;
       background-color: #fff;
     }
     .image {
