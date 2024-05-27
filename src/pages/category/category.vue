@@ -192,12 +192,6 @@
         color: #999;
       }
     }
-    .more {
-      &::after {
-        // font-family: 'erabbit' !important;
-        // content: '\e6c2';
-      }
-    }
     .section {
       display: flex;
       flex-wrap: wrap;
