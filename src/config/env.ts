@@ -8,7 +8,7 @@ const envMap = {
   },
   production: {
     baseUrl: 'http://m.beta.xxx.com',
-    apiBaseUrl: 'https://pcapi-xiaotuxian-front-devtest.itheima.net'
+    apiBaseUrl: 'https://pcapi-xiaotuxian-front.itheima.net'
   }
 }
 
