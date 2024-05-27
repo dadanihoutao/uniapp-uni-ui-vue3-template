@@ -30,6 +30,7 @@
   const activeIndex = ref(0)
   const fetchHotData = async () => {
     const res = await getHotListAPI(currenMap!.url, {
+      // 开发环境判断
       page: import.meta.env.DEV ? 31 : 1,
       pageSize: 10
     })
