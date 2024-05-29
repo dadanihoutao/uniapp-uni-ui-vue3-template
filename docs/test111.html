@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // strs = ["flower","flow","flight"]  //fl
+      // strs = ["dog","racecar","car"] // ''
+      // 来查找字符串数组中的最长公共前缀
+      // 如果不存在公共前缀，返回空字符串
+
+      let strs = ['flower', 'flow', 'flight']
+
+      // const strs = ["dog","racecar","car"]
+
+      let s = ''
+      for (let i = 0; i < strs.length; i++) {
+        const res = []
+        for (let j = 0; j < strs.length; j++) {
+          let char = strs[i].substring(i, i + 1)
+          if (char === strs[j].substring(i, i + 1)) {
+            res.push(char)
+          }
+        }
+        if (res.length === strs.length) {
+          s += res[0]
+        }
+      }
+      console.log(s)
+
+      // console.log(strs.sort())
+      strs = strs.sort()
+      const a = strs[0]
+      const b = strs[strs.length - 1]
+      console.log(a, b)
+      let result = ''
+      for (let i = 0; i < strs.length; i++) {
+        if (a[i] === b[i]) result += a[i]
+        else break
+      }
+      console.log(result)
+    </script>
+  </body>
+</html>
