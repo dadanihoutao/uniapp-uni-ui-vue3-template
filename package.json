@@ -44,7 +44,7 @@
     "eslint": "eslint --ext .vue,.ts src/ --fix",
     "stylelint": "stylelint \"src/**/*.(vue|scss|css)\" --fix",
     "prepare": "husky",
-    "commit": "git pull && git add . && git-cz && git push",
+    "commit": "git add . && git-cz && git push",
     "add": "node ./auto/addPage.ts"
   },
   "dependencies": {

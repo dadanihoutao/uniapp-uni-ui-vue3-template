@@ -1,0 +1,89 @@
+<script>
+  const num = {
+    a: 8,
+    add() {
+      console.log(this)
+      return this.a + 2
+    },
+    reduce: () => {
+      console.log(this)
+      this.a - 2
+    }
+  }
+
+  // console.log(num.add())
+  // console.log(num.reduce())
+
+  // var a;
+  // console.log(typeof a) // undefined
+  // console.log(b) // b is defined
+  // b = 10 // 报错就不往下走了
+  // console.log(typeof b)
+
+  // 常用的数组方法
+  //  push/shift/unshift/pop/find/findIndex/sort/reverse/includes/splice/join/map/flat/fill/reduce
+
+  // html 创建元素节点
+  // document.createElement()  document.body.appendChild(div)
+
+  // $('<div>').text('123')
+  // .html('<p>123123<p>')
+  // $('<div>').attr('id', 1)
+
+  // $('body').append(div)
+  /**
+   * getElementById()
+   * getElementByTagName()
+   * getElementByClassName()
+   * querySelectorAll()
+   * querySelector()
+   *
+   * document.documentElement.clientWidth/height || document.body.clientWidth/height
+   *
+   *
+   * document.getElementById('div').nextElementSibling
+   * document.getElementById('div').previousElementSibling
+   *
+   *
+   * */
+  /**
+   * let div = document.createElement('div')
+   * div.innerHtml = '123'
+   * let body = document.getElement('body')
+   * body.appendChild('div')
+   *
+   * div2 = div.cloneNode(true)
+   *        div.clone()
+   *
+   * body.insertBefore(div2)
+   *
+   *
+   * */
+
+  /**
+   *
+   * 排序算法
+   * */
+  let arr = [1, 2, 34, 4, 10, 12, 40]
+
+  // let newArr = arr.sort((a, b) => {
+  //   return a - b
+  // })
+
+  // console.log(newArr)
+
+  // 冒泡排序
+  // let len = arr.length
+
+  // for (let i = 0; i < len - 1; i++) {
+  //   for (let j = 0; j < len - 1 - i; j++) {
+  //     if (arr[j] > arr[j + 1]) {
+  //       let temp = arr[j + 1]
+  //       arr[j + 1] = arr[j]
+  //       arr[j] = temp
+  //     }
+  //   }
+  // }
+
+  console.log(arr)
+</script>
